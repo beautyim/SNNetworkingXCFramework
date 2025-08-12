@@ -1,0 +1,5 @@
+framework module "SonarMusicAPIClient" {
+    umbrella header "SonarMusicAPIClient.h"
+    export *
+    module * { export * }
+}
