@@ -8827,9 +8827,9 @@ __attribute__((swift_name("PostVipSubmit200ResponseOneOf1.OkCompanion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PostVipSubmit200ResponseOneOfData")))
 @interface SMAPICPostVipSubmit200ResponseOneOfData : SMAPICBase
-- (instancetype)initWithBalance:(SMAPICInt * _Nullable)balance userInfo:(SMAPICPostVipSubmit200ResponseOneOfDataUserInfo * _Nullable)userInfo __attribute__((swift_name("init(balance:userInfo:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithBalance:(SMAPICLong * _Nullable)balance userInfo:(SMAPICPostVipSubmit200ResponseOneOfDataUserInfo * _Nullable)userInfo __attribute__((swift_name("init(balance:userInfo:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SMAPICPostVipSubmit200ResponseOneOfDataCompanion *companion __attribute__((swift_name("companion")));
-- (SMAPICPostVipSubmit200ResponseOneOfData *)doCopyBalance:(SMAPICInt * _Nullable)balance userInfo:(SMAPICPostVipSubmit200ResponseOneOfDataUserInfo * _Nullable)userInfo __attribute__((swift_name("doCopy(balance:userInfo:)")));
+- (SMAPICPostVipSubmit200ResponseOneOfData *)doCopyBalance:(SMAPICLong * _Nullable)balance userInfo:(SMAPICPostVipSubmit200ResponseOneOfDataUserInfo * _Nullable)userInfo __attribute__((swift_name("doCopy(balance:userInfo:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -8838,7 +8838,7 @@ __attribute__((swift_name("PostVipSubmit200ResponseOneOfData")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="balance")
 */
-@property (readonly) SMAPICInt * _Nullable balance __attribute__((swift_name("balance")));
+@property (readonly) SMAPICLong * _Nullable balance __attribute__((swift_name("balance")));
 
 /**
  * @note annotations
@@ -8865,9 +8865,9 @@ __attribute__((swift_name("PostVipSubmit200ResponseOneOfData.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PostVipSubmit200ResponseOneOfDataUserInfo")))
 @interface SMAPICPostVipSubmit200ResponseOneOfDataUserInfo : SMAPICBase
-- (instancetype)initWithEmail:(NSString * _Nullable)email avatar:(NSString * _Nullable)avatar isVip:(SMAPICPostVipSubmit200ResponseOneOfDataUserInfoIsVip * _Nullable)isVip balance:(SMAPICInt * _Nullable)balance vipExp:(SMAPICInt * _Nullable)vipExp nickname:(NSString * _Nullable)nickname __attribute__((swift_name("init(email:avatar:isVip:balance:vipExp:nickname:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithEmail:(NSString * _Nullable)email avatar:(NSString * _Nullable)avatar isVip:(SMAPICPostVipSubmit200ResponseOneOfDataUserInfoIsVip * _Nullable)isVip balance:(SMAPICLong * _Nullable)balance vipExp:(SMAPICLong * _Nullable)vipExp nickname:(NSString * _Nullable)nickname __attribute__((swift_name("init(email:avatar:isVip:balance:vipExp:nickname:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SMAPICPostVipSubmit200ResponseOneOfDataUserInfoCompanion *companion __attribute__((swift_name("companion")));
-- (SMAPICPostVipSubmit200ResponseOneOfDataUserInfo *)doCopyEmail:(NSString * _Nullable)email avatar:(NSString * _Nullable)avatar isVip:(SMAPICPostVipSubmit200ResponseOneOfDataUserInfoIsVip * _Nullable)isVip balance:(SMAPICInt * _Nullable)balance vipExp:(SMAPICInt * _Nullable)vipExp nickname:(NSString * _Nullable)nickname __attribute__((swift_name("doCopy(email:avatar:isVip:balance:vipExp:nickname:)")));
+- (SMAPICPostVipSubmit200ResponseOneOfDataUserInfo *)doCopyEmail:(NSString * _Nullable)email avatar:(NSString * _Nullable)avatar isVip:(SMAPICPostVipSubmit200ResponseOneOfDataUserInfoIsVip * _Nullable)isVip balance:(SMAPICLong * _Nullable)balance vipExp:(SMAPICLong * _Nullable)vipExp nickname:(NSString * _Nullable)nickname __attribute__((swift_name("doCopy(email:avatar:isVip:balance:vipExp:nickname:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -8882,7 +8882,7 @@ __attribute__((swift_name("PostVipSubmit200ResponseOneOfDataUserInfo")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="balance")
 */
-@property (readonly) SMAPICInt * _Nullable balance __attribute__((swift_name("balance")));
+@property (readonly) SMAPICLong * _Nullable balance __attribute__((swift_name("balance")));
 
 /**
  * @note annotations
@@ -8906,7 +8906,7 @@ __attribute__((swift_name("PostVipSubmit200ResponseOneOfDataUserInfo")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="vip_exp")
 */
-@property (readonly) SMAPICInt * _Nullable vipExp __attribute__((swift_name("vipExp")));
+@property (readonly) SMAPICLong * _Nullable vipExp __attribute__((swift_name("vipExp")));
 @end
 
 __attribute__((objc_subclassing_restricted))
