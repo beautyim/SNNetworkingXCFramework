@@ -152,7 +152,7 @@ __attribute__((swift_name("HTTPClientFactory")))
 + (instancetype)hTTPClientFactory __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) SMAPICHTTPClientFactory *shared __attribute__((swift_name("shared")));
 - (SMAPICKtor_client_coreHttpClient *)getClient __attribute__((swift_name("getClient()")));
-- (void)initializeGetAccessToken:(NSString * _Nullable (^)(void))getAccessToken __attribute__((swift_name("initialize(getAccessToken:)")));
+- (void)initializeGetAccessToken:(NSString * _Nullable (^)(void))getAccessToken getUserAgent:(NSString *(^)(void))getUserAgent __attribute__((swift_name("initialize(getAccessToken:getUserAgent:)")));
 @property BOOL isInitialized __attribute__((swift_name("isInitialized")));
 @end
 
@@ -983,24 +983,25 @@ __attribute__((swift_name("Apple1.RegisterFromCompanion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("AppleUserInfo")))
 @interface SMAPICAppleUserInfo : SMAPICBase
-- (instancetype)initWithEmail:(NSString * _Nullable)email fullName:(NSString * _Nullable)fullName __attribute__((swift_name("init(email:fullName:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithIdentityToken:(NSString *)identityToken appleUserId:(NSString *)appleUserId __attribute__((swift_name("init(identityToken:appleUserId:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SMAPICAppleUserInfoCompanion *companion __attribute__((swift_name("companion")));
-- (SMAPICAppleUserInfo *)doCopyEmail:(NSString * _Nullable)email fullName:(NSString * _Nullable)fullName __attribute__((swift_name("doCopy(email:fullName:)")));
+- (SMAPICAppleUserInfo *)doCopyIdentityToken:(NSString *)identityToken appleUserId:(NSString *)appleUserId __attribute__((swift_name("doCopy(identityToken:appleUserId:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 
 /**
  * @note annotations
- *   kotlinx.serialization.SerialName(value="email")
+ *   kotlinx.serialization.SerialName(value="openId")
+ *   kotlinx.serialization.Required
 */
-@property (readonly) NSString * _Nullable email __attribute__((swift_name("email")));
+@property (readonly) NSString *appleUserId __attribute__((swift_name("appleUserId")));
 
 /**
  * @note annotations
- *   kotlinx.serialization.SerialName(value="fullName")
+ *   kotlinx.serialization.SerialName(value="identityToken")
 */
-@property (readonly) NSString * _Nullable fullName __attribute__((swift_name("fullName")));
+@property (readonly) NSString *identityToken __attribute__((swift_name("identityToken")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -5305,26 +5306,12 @@ __attribute__((swift_name("PostLoginHandle200ResponseOneOfDataUserInfo.Companion
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PostLoginHandleRequest")))
 @interface SMAPICPostLoginHandleRequest : SMAPICBase
-- (instancetype)initWithEmail:(NSString *)email password:(NSString *)password loginFrom:(SMAPICPostLoginHandleRequestLoginFrom *)loginFrom channel:(SMAPICPostLoginHandleRequestChannel * _Nullable)channel idToken:(NSString * _Nullable)idToken appleUserId:(NSString * _Nullable)appleUserId userInfo:(SMAPICAppleUserInfo * _Nullable)userInfo identityToken:(NSString * _Nullable)identityToken __attribute__((swift_name("init(email:password:loginFrom:channel:idToken:appleUserId:userInfo:identityToken:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithEmail:(NSString *)email password:(NSString *)password loginFrom:(SMAPICPostLoginHandleRequestLoginFrom *)loginFrom userInfo:(SMAPICAppleUserInfo * _Nullable)userInfo __attribute__((swift_name("init(email:password:loginFrom:userInfo:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SMAPICPostLoginHandleRequestCompanion *companion __attribute__((swift_name("companion")));
-- (SMAPICPostLoginHandleRequest *)doCopyEmail:(NSString *)email password:(NSString *)password loginFrom:(SMAPICPostLoginHandleRequestLoginFrom *)loginFrom channel:(SMAPICPostLoginHandleRequestChannel * _Nullable)channel idToken:(NSString * _Nullable)idToken appleUserId:(NSString * _Nullable)appleUserId userInfo:(SMAPICAppleUserInfo * _Nullable)userInfo identityToken:(NSString * _Nullable)identityToken __attribute__((swift_name("doCopy(email:password:loginFrom:channel:idToken:appleUserId:userInfo:identityToken:)")));
+- (SMAPICPostLoginHandleRequest *)doCopyEmail:(NSString *)email password:(NSString *)password loginFrom:(SMAPICPostLoginHandleRequestLoginFrom *)loginFrom userInfo:(SMAPICAppleUserInfo * _Nullable)userInfo __attribute__((swift_name("doCopy(email:password:loginFrom:userInfo:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="apple_user_id")
- *   kotlinx.serialization.Required
-*/
-@property (readonly) NSString * _Nullable appleUserId __attribute__((swift_name("appleUserId")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="channel")
- *   kotlinx.serialization.Required
-*/
-@property (readonly) SMAPICPostLoginHandleRequestChannel * _Nullable channel __attribute__((swift_name("channel")));
 
 /**
  * @note annotations
@@ -5332,19 +5319,6 @@ __attribute__((swift_name("PostLoginHandleRequest")))
  *   kotlinx.serialization.Required
 */
 @property (readonly) NSString *email __attribute__((swift_name("email")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="id_token")
- *   kotlinx.serialization.Required
-*/
-@property (readonly) NSString * _Nullable idToken __attribute__((swift_name("idToken")));
-
-/**
- * @note annotations
- *   kotlinx.serialization.SerialName(value="identity_token")
-*/
-@property (readonly) NSString * _Nullable identityToken __attribute__((swift_name("identityToken")));
 
 /**
  * @note annotations
@@ -5420,7 +5394,6 @@ __attribute__((swift_name("PostLoginHandleRequest.LoginFrom")))
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SMAPICPostLoginHandleRequestLoginFromCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SMAPICPostLoginHandleRequestLoginFrom *email __attribute__((swift_name("email")));
-@property (class, readonly) SMAPICPostLoginHandleRequestLoginFrom *google __attribute__((swift_name("google")));
 @property (class, readonly) SMAPICPostLoginHandleRequestLoginFrom *apple __attribute__((swift_name("apple")));
 + (SMAPICKotlinArray<SMAPICPostLoginHandleRequestLoginFrom *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SMAPICPostLoginHandleRequestLoginFrom *> *entries __attribute__((swift_name("entries")));
@@ -7291,6 +7264,7 @@ __attribute__((swift_name("PostReportSubmit200Response.Ok")))
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @property (class, readonly, getter=companion) SMAPICPostReportSubmit200ResponseOkCompanion *companion __attribute__((swift_name("companion")));
 @property (class, readonly) SMAPICPostReportSubmit200ResponseOk *_0 __attribute__((swift_name("_0")));
+@property (class, readonly) SMAPICPostReportSubmit200ResponseOk *_1 __attribute__((swift_name("_1")));
 + (SMAPICKotlinArray<SMAPICPostReportSubmit200ResponseOk *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SMAPICPostReportSubmit200ResponseOk *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
