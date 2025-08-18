@@ -7173,6 +7173,7 @@ __attribute__((swift_name("PostUploadCreateMediaRequest.MediaType")))
 @property (class, readonly) SMAPICPostUploadCreateMediaRequestMediaType *image __attribute__((swift_name("image")));
 @property (class, readonly) SMAPICPostUploadCreateMediaRequestMediaType *video __attribute__((swift_name("video")));
 @property (class, readonly) SMAPICPostUploadCreateMediaRequestMediaType *audio __attribute__((swift_name("audio")));
+@property (class, readonly) SMAPICPostUploadCreateMediaRequestMediaType *music __attribute__((swift_name("music")));
 + (SMAPICKotlinArray<SMAPICPostUploadCreateMediaRequestMediaType *> *)values __attribute__((swift_name("values()")));
 @property (class, readonly) NSArray<SMAPICPostUploadCreateMediaRequestMediaType *> *entries __attribute__((swift_name("entries")));
 @property (readonly) int32_t value __attribute__((swift_name("value")));
