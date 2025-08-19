@@ -153,6 +153,7 @@ __attribute__((swift_name("HTTPClientFactory")))
 @property (class, readonly, getter=shared) SMAPICHTTPClientFactory *shared __attribute__((swift_name("shared")));
 - (SMAPICKtor_client_coreHttpClient *)getClient __attribute__((swift_name("getClient()")));
 - (void)initializeGetAccessToken:(NSString * _Nullable (^)(void))getAccessToken getUserAgent:(NSString *(^)(void))getUserAgent isCarryUserAgent:(BOOL)isCarryUserAgent isDebug:(BOOL)isDebug __attribute__((swift_name("initialize(getAccessToken:getUserAgent:isCarryUserAgent:isDebug:)")));
+@property BOOL isDebug __attribute__((swift_name("isDebug")));
 @property BOOL isInitialized __attribute__((swift_name("isInitialized")));
 @end
 
@@ -8143,9 +8144,9 @@ __attribute__((swift_name("PostVipSubmitRequest.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UploadPresignedData")))
 @interface SMAPICUploadPresignedData : SMAPICBase
-- (instancetype)initWithDir:(SMAPICUploadPresignedDataDir *)dir isUpload:(SMAPICUploadPresignedDataIsUpload * _Nullable)isUpload uploadId:(SMAPICInt * _Nullable)uploadId presignedPost:(SMAPICUploadPresignedDataPresignedPost *)presignedPost coverUrl:(NSString * _Nullable)coverUrl smallUrl:(NSString * _Nullable)smallUrl coverPresignedPost:(SMAPICUploadPresignedDataCoverPresignedPost * _Nullable)coverPresignedPost filePath:(NSString * _Nullable)filePath __attribute__((swift_name("init(dir:isUpload:uploadId:presignedPost:coverUrl:smallUrl:coverPresignedPost:filePath:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithDir:(SMAPICUploadPresignedDataDir *)dir isUpload:(SMAPICUploadPresignedDataIsUpload * _Nullable)isUpload uploadId:(SMAPICInt * _Nullable)uploadId presignedPost:(SMAPICUploadPresignedDataPresignedPost * _Nullable)presignedPost coverUrl:(NSString * _Nullable)coverUrl smallUrl:(NSString * _Nullable)smallUrl coverPresignedPost:(SMAPICUploadPresignedDataCoverPresignedPost * _Nullable)coverPresignedPost filePath:(NSString * _Nullable)filePath __attribute__((swift_name("init(dir:isUpload:uploadId:presignedPost:coverUrl:smallUrl:coverPresignedPost:filePath:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SMAPICUploadPresignedDataCompanion *companion __attribute__((swift_name("companion")));
-- (SMAPICUploadPresignedData *)doCopyDir:(SMAPICUploadPresignedDataDir *)dir isUpload:(SMAPICUploadPresignedDataIsUpload * _Nullable)isUpload uploadId:(SMAPICInt * _Nullable)uploadId presignedPost:(SMAPICUploadPresignedDataPresignedPost *)presignedPost coverUrl:(NSString * _Nullable)coverUrl smallUrl:(NSString * _Nullable)smallUrl coverPresignedPost:(SMAPICUploadPresignedDataCoverPresignedPost * _Nullable)coverPresignedPost filePath:(NSString * _Nullable)filePath __attribute__((swift_name("doCopy(dir:isUpload:uploadId:presignedPost:coverUrl:smallUrl:coverPresignedPost:filePath:)")));
+- (SMAPICUploadPresignedData *)doCopyDir:(SMAPICUploadPresignedDataDir *)dir isUpload:(SMAPICUploadPresignedDataIsUpload * _Nullable)isUpload uploadId:(SMAPICInt * _Nullable)uploadId presignedPost:(SMAPICUploadPresignedDataPresignedPost * _Nullable)presignedPost coverUrl:(NSString * _Nullable)coverUrl smallUrl:(NSString * _Nullable)smallUrl coverPresignedPost:(SMAPICUploadPresignedDataCoverPresignedPost * _Nullable)coverPresignedPost filePath:(NSString * _Nullable)filePath __attribute__((swift_name("doCopy(dir:isUpload:uploadId:presignedPost:coverUrl:smallUrl:coverPresignedPost:filePath:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -8184,9 +8185,8 @@ __attribute__((swift_name("UploadPresignedData")))
 /**
  * @note annotations
  *   kotlinx.serialization.SerialName(value="presigned_post")
- *   kotlinx.serialization.Required
 */
-@property (readonly) SMAPICUploadPresignedDataPresignedPost *presignedPost __attribute__((swift_name("presignedPost")));
+@property (readonly) SMAPICUploadPresignedDataPresignedPost * _Nullable presignedPost __attribute__((swift_name("presignedPost")));
 
 /**
  * @note annotations
