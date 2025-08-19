@@ -2961,9 +2961,9 @@ __attribute__((swift_name("MusicHallItem.IsLikeCompanion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MusicListItem")))
 @interface SMAPICMusicListItem : SMAPICBase
-- (instancetype)initWithId:(SMAPICInt * _Nullable)id uid:(SMAPICInt * _Nullable)uid like:(SMAPICInt * _Nullable)like mood:(NSString * _Nullable)mood intro:(NSString * _Nullable)intro style:(NSString * _Nullable)style lyrics:(NSString * _Nullable)lyrics status:(SMAPICInt * _Nullable)status duration:(SMAPICInt * _Nullable)duration language:(NSString * _Nullable)language mediaId:(SMAPICInt * _Nullable)mediaId instrument:(NSString * _Nullable)instrument createTime:(SMAPICKotlinx_datetimeInstant * _Nullable)createTime updateTime:(SMAPICKotlinx_datetimeInstant * _Nullable)updateTime coverMediaId:(SMAPICInt * _Nullable)coverMediaId coverMediaUrl:(NSString * _Nullable)coverMediaUrl introPicMediaId:(SMAPICInt * _Nullable)introPicMediaId introVoiceMediaId:(SMAPICInt * _Nullable)introVoiceMediaId __attribute__((swift_name("init(id:uid:like:mood:intro:style:lyrics:status:duration:language:mediaId:instrument:createTime:updateTime:coverMediaId:coverMediaUrl:introPicMediaId:introVoiceMediaId:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithId:(NSString * _Nullable)id uid:(NSString * _Nullable)uid mediaID:(NSString * _Nullable)mediaID status:(NSString * _Nullable)status style:(NSString * _Nullable)style mood:(NSString * _Nullable)mood language:(NSString * _Nullable)language instrument:(NSString * _Nullable)instrument lyrics:(NSString * _Nullable)lyrics like:(NSString * _Nullable)like isLike:(SMAPICInt * _Nullable)isLike isLikeBoolean:(BOOL)isLikeBoolean duration:(NSString * _Nullable)duration title:(NSString * _Nullable)title isInstrumental:(NSString * _Nullable)isInstrumental isInstrumentalBoolean:(BOOL)isInstrumentalBoolean promptTitle:(NSString * _Nullable)promptTitle coverMediaId:(NSString * _Nullable)coverMediaId coverMediaUrl:(NSString * _Nullable)coverMediaUrl intro:(NSString * _Nullable)intro introPicMediaId:(NSString * _Nullable)introPicMediaId introVoiceMediaId:(NSString * _Nullable)introVoiceMediaId createTime:(NSString * _Nullable)createTime updateTime:(NSString * _Nullable)updateTime __attribute__((swift_name("init(id:uid:mediaID:status:style:mood:language:instrument:lyrics:like:isLike:isLikeBoolean:duration:title:isInstrumental:isInstrumentalBoolean:promptTitle:coverMediaId:coverMediaUrl:intro:introPicMediaId:introVoiceMediaId:createTime:updateTime:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) SMAPICMusicListItemCompanion *companion __attribute__((swift_name("companion")));
-- (SMAPICMusicListItem *)doCopyId:(SMAPICInt * _Nullable)id uid:(SMAPICInt * _Nullable)uid like:(SMAPICInt * _Nullable)like mood:(NSString * _Nullable)mood intro:(NSString * _Nullable)intro style:(NSString * _Nullable)style lyrics:(NSString * _Nullable)lyrics status:(SMAPICInt * _Nullable)status duration:(SMAPICInt * _Nullable)duration language:(NSString * _Nullable)language mediaId:(SMAPICInt * _Nullable)mediaId instrument:(NSString * _Nullable)instrument createTime:(SMAPICKotlinx_datetimeInstant * _Nullable)createTime updateTime:(SMAPICKotlinx_datetimeInstant * _Nullable)updateTime coverMediaId:(SMAPICInt * _Nullable)coverMediaId coverMediaUrl:(NSString * _Nullable)coverMediaUrl introPicMediaId:(SMAPICInt * _Nullable)introPicMediaId introVoiceMediaId:(SMAPICInt * _Nullable)introVoiceMediaId __attribute__((swift_name("doCopy(id:uid:like:mood:intro:style:lyrics:status:duration:language:mediaId:instrument:createTime:updateTime:coverMediaId:coverMediaUrl:introPicMediaId:introVoiceMediaId:)")));
+- (SMAPICMusicListItem *)doCopyId:(NSString * _Nullable)id uid:(NSString * _Nullable)uid mediaID:(NSString * _Nullable)mediaID status:(NSString * _Nullable)status style:(NSString * _Nullable)style mood:(NSString * _Nullable)mood language:(NSString * _Nullable)language instrument:(NSString * _Nullable)instrument lyrics:(NSString * _Nullable)lyrics like:(NSString * _Nullable)like isLike:(SMAPICInt * _Nullable)isLike isLikeBoolean:(BOOL)isLikeBoolean duration:(NSString * _Nullable)duration title:(NSString * _Nullable)title isInstrumental:(NSString * _Nullable)isInstrumental isInstrumentalBoolean:(BOOL)isInstrumentalBoolean promptTitle:(NSString * _Nullable)promptTitle coverMediaId:(NSString * _Nullable)coverMediaId coverMediaUrl:(NSString * _Nullable)coverMediaUrl intro:(NSString * _Nullable)intro introPicMediaId:(NSString * _Nullable)introPicMediaId introVoiceMediaId:(NSString * _Nullable)introVoiceMediaId createTime:(NSString * _Nullable)createTime updateTime:(NSString * _Nullable)updateTime __attribute__((swift_name("doCopy(id:uid:mediaID:status:style:mood:language:instrument:lyrics:like:isLike:isLikeBoolean:duration:title:isInstrumental:isInstrumentalBoolean:promptTitle:coverMediaId:coverMediaUrl:intro:introPicMediaId:introVoiceMediaId:createTime:updateTime:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -2972,7 +2972,7 @@ __attribute__((swift_name("MusicListItem")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="cover_media_id")
 */
-@property (readonly) SMAPICInt * _Nullable coverMediaId __attribute__((swift_name("coverMediaId")));
+@property (readonly) NSString * _Nullable coverMediaId __attribute__((swift_name("coverMediaId")));
 
 /**
  * @note annotations
@@ -2984,19 +2984,19 @@ __attribute__((swift_name("MusicListItem")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="create_time")
 */
-@property (readonly) SMAPICKotlinx_datetimeInstant * _Nullable createTime __attribute__((swift_name("createTime")));
+@property (readonly) NSString * _Nullable createTime __attribute__((swift_name("createTime")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.SerialName(value="duration")
 */
-@property (readonly) SMAPICInt * _Nullable duration __attribute__((swift_name("duration")));
+@property (readonly) NSString * _Nullable duration __attribute__((swift_name("duration")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.SerialName(value="id")
 */
-@property (readonly) SMAPICInt * _Nullable id __attribute__((swift_name("id")));
+@property (readonly) NSString * _Nullable id __attribute__((swift_name("id")));
 
 /**
  * @note annotations
@@ -3014,13 +3014,37 @@ __attribute__((swift_name("MusicListItem")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="intro_pic_media_id")
 */
-@property (readonly) SMAPICInt * _Nullable introPicMediaId __attribute__((swift_name("introPicMediaId")));
+@property (readonly) NSString * _Nullable introPicMediaId __attribute__((swift_name("introPicMediaId")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.SerialName(value="intro_voice_media_id")
 */
-@property (readonly) SMAPICInt * _Nullable introVoiceMediaId __attribute__((swift_name("introVoiceMediaId")));
+@property (readonly) NSString * _Nullable introVoiceMediaId __attribute__((swift_name("introVoiceMediaId")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="is_instrumental")
+*/
+@property (readonly) NSString * _Nullable isInstrumental __attribute__((swift_name("isInstrumental")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Transient
+*/
+@property (readonly) BOOL isInstrumentalBoolean __attribute__((swift_name("isInstrumentalBoolean")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="is_like")
+*/
+@property (readonly) SMAPICInt * _Nullable isLike __attribute__((swift_name("isLike")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Transient
+*/
+@property (readonly) BOOL isLikeBoolean __attribute__((swift_name("isLikeBoolean")));
 
 /**
  * @note annotations
@@ -3032,7 +3056,7 @@ __attribute__((swift_name("MusicListItem")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="like")
 */
-@property (readonly) SMAPICInt * _Nullable like __attribute__((swift_name("like")));
+@property (readonly) NSString * _Nullable like __attribute__((swift_name("like")));
 
 /**
  * @note annotations
@@ -3044,7 +3068,7 @@ __attribute__((swift_name("MusicListItem")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="media_id")
 */
-@property (readonly) SMAPICInt * _Nullable mediaId __attribute__((swift_name("mediaId")));
+@property (readonly) NSString * _Nullable mediaID __attribute__((swift_name("mediaID")));
 
 /**
  * @note annotations
@@ -3054,9 +3078,15 @@ __attribute__((swift_name("MusicListItem")))
 
 /**
  * @note annotations
+ *   kotlinx.serialization.SerialName(value="prompt_title")
+*/
+@property (readonly) NSString * _Nullable promptTitle __attribute__((swift_name("promptTitle")));
+
+/**
+ * @note annotations
  *   kotlinx.serialization.SerialName(value="status")
 */
-@property (readonly) SMAPICInt * _Nullable status __attribute__((swift_name("status")));
+@property (readonly) NSString * _Nullable status __attribute__((swift_name("status")));
 
 /**
  * @note annotations
@@ -3066,15 +3096,21 @@ __attribute__((swift_name("MusicListItem")))
 
 /**
  * @note annotations
+ *   kotlinx.serialization.SerialName(value="title")
+*/
+@property (readonly) NSString * _Nullable title __attribute__((swift_name("title")));
+
+/**
+ * @note annotations
  *   kotlinx.serialization.SerialName(value="uid")
 */
-@property (readonly) SMAPICInt * _Nullable uid __attribute__((swift_name("uid")));
+@property (readonly) NSString * _Nullable uid __attribute__((swift_name("uid")));
 
 /**
  * @note annotations
  *   kotlinx.serialization.SerialName(value="update_time")
 */
-@property (readonly) SMAPICKotlinx_datetimeInstant * _Nullable updateTime __attribute__((swift_name("updateTime")));
+@property (readonly) NSString * _Nullable updateTime __attribute__((swift_name("updateTime")));
 @end
 
 __attribute__((objc_subclassing_restricted))
