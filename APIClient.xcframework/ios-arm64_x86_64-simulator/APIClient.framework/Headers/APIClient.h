@@ -3706,9 +3706,9 @@ __attribute__((swift_name("PostAppleVerify200Response.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PostAppleVerify200ResponseData")))
 @interface APICPostAppleVerify200ResponseData : APICBase
-- (instancetype)initWithMoney:(NSString * _Nullable)money goodsId:(APICInt * _Nullable)goodsId userInfo:(APICPostAppleVerify200ResponseDataUserInfo * _Nullable)userInfo isSandbox:(APICBoolean * _Nullable)isSandbox accountInfo:(APICPostAppleVerify200ResponseDataAccountInfo * _Nullable)accountInfo productType:(APICInt * _Nullable)productType __attribute__((swift_name("init(money:goodsId:userInfo:isSandbox:accountInfo:productType:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMoney:(NSString * _Nullable)money goodsId:(APICInt * _Nullable)goodsId userInfo:(APICPostAppleVerify200ResponseDataUserInfo * _Nullable)userInfo isSandbox:(APICInt * _Nullable)isSandbox accountInfo:(APICPostAppleVerify200ResponseDataAccountInfo * _Nullable)accountInfo productType:(APICInt * _Nullable)productType __attribute__((swift_name("init(money:goodsId:userInfo:isSandbox:accountInfo:productType:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) APICPostAppleVerify200ResponseDataCompanion *companion __attribute__((swift_name("companion")));
-- (APICPostAppleVerify200ResponseData *)doCopyMoney:(NSString * _Nullable)money goodsId:(APICInt * _Nullable)goodsId userInfo:(APICPostAppleVerify200ResponseDataUserInfo * _Nullable)userInfo isSandbox:(APICBoolean * _Nullable)isSandbox accountInfo:(APICPostAppleVerify200ResponseDataAccountInfo * _Nullable)accountInfo productType:(APICInt * _Nullable)productType __attribute__((swift_name("doCopy(money:goodsId:userInfo:isSandbox:accountInfo:productType:)")));
+- (APICPostAppleVerify200ResponseData *)doCopyMoney:(NSString * _Nullable)money goodsId:(APICInt * _Nullable)goodsId userInfo:(APICPostAppleVerify200ResponseDataUserInfo * _Nullable)userInfo isSandbox:(APICInt * _Nullable)isSandbox accountInfo:(APICPostAppleVerify200ResponseDataAccountInfo * _Nullable)accountInfo productType:(APICInt * _Nullable)productType __attribute__((swift_name("doCopy(money:goodsId:userInfo:isSandbox:accountInfo:productType:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -3729,7 +3729,7 @@ __attribute__((swift_name("PostAppleVerify200ResponseData")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="is_sandbox")
 */
-@property (readonly) APICBoolean * _Nullable isSandbox __attribute__((swift_name("isSandbox")));
+@property (readonly) APICInt * _Nullable isSandbox __attribute__((swift_name("isSandbox")));
 
 /**
  * @note annotations
