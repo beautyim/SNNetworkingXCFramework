@@ -1835,7 +1835,7 @@ __attribute__((swift_name("GetMusicMy200ResponseDataUserInfo")))
 
 /**
  * @note annotations
- *   kotlinx.serialization.SerialName(value="credits")
+ *   kotlinx.serialization.SerialName(value="balance")
 */
 @property (readonly) APICInt * _Nullable credits __attribute__((swift_name("credits")));
 
@@ -3867,9 +3867,9 @@ __attribute__((swift_name("PostAppleVerify200Response.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PostAppleVerify200ResponseData")))
 @interface APICPostAppleVerify200ResponseData : APICBase
-- (instancetype)initWithMoney:(NSString * _Nullable)money goodsId:(APICInt * _Nullable)goodsId userInfo:(APICPostAppleVerify200ResponseDataUserInfo * _Nullable)userInfo isSandbox:(APICInt * _Nullable)isSandbox accountInfo:(APICPostAppleVerify200ResponseDataAccountInfo * _Nullable)accountInfo productType:(APICInt * _Nullable)productType __attribute__((swift_name("init(money:goodsId:userInfo:isSandbox:accountInfo:productType:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMoney:(APICDouble * _Nullable)money goodsId:(APICInt * _Nullable)goodsId userInfo:(APICPostAppleVerify200ResponseDataUserInfo * _Nullable)userInfo isSandbox:(APICInt * _Nullable)isSandbox accountInfo:(APICPostAppleVerify200ResponseDataAccountInfo * _Nullable)accountInfo productType:(APICInt * _Nullable)productType __attribute__((swift_name("init(money:goodsId:userInfo:isSandbox:accountInfo:productType:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) APICPostAppleVerify200ResponseDataCompanion *companion __attribute__((swift_name("companion")));
-- (APICPostAppleVerify200ResponseData *)doCopyMoney:(NSString * _Nullable)money goodsId:(APICInt * _Nullable)goodsId userInfo:(APICPostAppleVerify200ResponseDataUserInfo * _Nullable)userInfo isSandbox:(APICInt * _Nullable)isSandbox accountInfo:(APICPostAppleVerify200ResponseDataAccountInfo * _Nullable)accountInfo productType:(APICInt * _Nullable)productType __attribute__((swift_name("doCopy(money:goodsId:userInfo:isSandbox:accountInfo:productType:)")));
+- (APICPostAppleVerify200ResponseData *)doCopyMoney:(APICDouble * _Nullable)money goodsId:(APICInt * _Nullable)goodsId userInfo:(APICPostAppleVerify200ResponseDataUserInfo * _Nullable)userInfo isSandbox:(APICInt * _Nullable)isSandbox accountInfo:(APICPostAppleVerify200ResponseDataAccountInfo * _Nullable)accountInfo productType:(APICInt * _Nullable)productType __attribute__((swift_name("doCopy(money:goodsId:userInfo:isSandbox:accountInfo:productType:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -3896,7 +3896,7 @@ __attribute__((swift_name("PostAppleVerify200ResponseData")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="money")
 */
-@property (readonly) NSString * _Nullable money __attribute__((swift_name("money")));
+@property (readonly) APICDouble * _Nullable money __attribute__((swift_name("money")));
 
 /**
  * @note annotations
@@ -3961,9 +3961,9 @@ __attribute__((swift_name("PostAppleVerify200ResponseDataAccountInfo.Companion")
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PostAppleVerify200ResponseDataUserInfo")))
 @interface APICPostAppleVerify200ResponseDataUserInfo : APICBase
-- (instancetype)initWithUid:(APICInt * _Nullable)uid isVip:(APICInt * _Nullable)isVip vipExp:(NSString * _Nullable)vipExp nickname:(NSString * _Nullable)nickname __attribute__((swift_name("init(uid:isVip:vipExp:nickname:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithUid:(APICInt * _Nullable)uid isVip:(APICInt * _Nullable)isVip vipExp:(APICLong * _Nullable)vipExp nickname:(NSString * _Nullable)nickname __attribute__((swift_name("init(uid:isVip:vipExp:nickname:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) APICPostAppleVerify200ResponseDataUserInfoCompanion *companion __attribute__((swift_name("companion")));
-- (APICPostAppleVerify200ResponseDataUserInfo *)doCopyUid:(APICInt * _Nullable)uid isVip:(APICInt * _Nullable)isVip vipExp:(NSString * _Nullable)vipExp nickname:(NSString * _Nullable)nickname __attribute__((swift_name("doCopy(uid:isVip:vipExp:nickname:)")));
+- (APICPostAppleVerify200ResponseDataUserInfo *)doCopyUid:(APICInt * _Nullable)uid isVip:(APICInt * _Nullable)isVip vipExp:(APICLong * _Nullable)vipExp nickname:(NSString * _Nullable)nickname __attribute__((swift_name("doCopy(uid:isVip:vipExp:nickname:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -3990,7 +3990,7 @@ __attribute__((swift_name("PostAppleVerify200ResponseDataUserInfo")))
  * @note annotations
  *   kotlinx.serialization.SerialName(value="vip_exp")
 */
-@property (readonly) NSString * _Nullable vipExp __attribute__((swift_name("vipExp")));
+@property (readonly) APICLong * _Nullable vipExp __attribute__((swift_name("vipExp")));
 @end
 
 __attribute__((objc_subclassing_restricted))
